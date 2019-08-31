@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
 
 class App extends React.Component {
     constructor(props) {
@@ -9,11 +10,25 @@ class App extends React.Component {
           data : null,
       }
     }
-  
+/* TO DO'S
+    1. create a REST API with the button + textfield form.
+        -configure post requests on front-end side
+        -make form better looking(css)
+        -think about what other information besides stems I should put into this.
+    2. migrate python code  from app.py to dictionary.py for more modular code. (easier to find POF)
+*/
     render() {
         return (
             <p>
-                <Button>Go</Button>
+                <form noValidate autoComplete="off">
+                    <TextField
+                    id="search-a-word"
+                    label="Word"
+                    margin="normal"
+                    variant="outlined"
+                    />
+                    <Button>Go</Button>
+                </form>
                 <br />
                 The stems are { this.state.data }
             </p>
